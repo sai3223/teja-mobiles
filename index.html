@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teja Mobiles — Premium Smartphones & Accessories</title>
+  <meta name="description" content="Teja Mobiles — premium smartphones, fast delivery, best deals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; /* deep dark */
+      --card:#0f1720;
+      --muted:#9aa6b2;
+      --accent:#00d4ff; /* cyan */
+      --accent-2:#7c4dff; /* purple */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max-width:1200px;
+      --shadow: 0 6px 20px rgba(2,6,23,0.7);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,77,255,0.08), transparent),
+                  radial-gradient(800px 400px at 90% 90%, rgba(0,212,255,0.04), transparent),
+                  var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+    }
+    .container{max-width:var(--max-width);margin:0 auto}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(124,77,255,0.12)}
+    .logo svg{filter:drop-shadow(0 4px 10px rgba(0,212,255,0.08))}
+    .brand h1{margin:0;font-size:18px;letter-spacing:0.4px}
+    .nav{display:flex;gap:12px;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-size:14px}
+    .nav a:hover{color:var(--accent)}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;padding:10px 16px;border-radius:12px;font-weight:600;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#061018;box-shadow:0 8px 30px rgba(0,212,255,0.08)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .btn-outline{background:transparent;border:1px solid rgba(124,77,255,0.14);color:var(--accent-2)}
+    .btn-pill{padding:10px 20px;border-radius:999px}
+    .btn-icon{padding:10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)}
+    .hero h2{font-size:36px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* phone preview */
+    .phone-mock{background:linear-gradient(180deg,#071014, #0c1219);border-radius:28px;padding:20px;display:flex;flex-direction:column;gap:18px;align-items:center}
+    .phone-screen{width:320px;height:560px;border-radius:18px;background:linear-gradient(180deg,#061018, #0b1116);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+    .badge{position:absolute;top:18px;left:18px;background:rgba(0,0,0,0.45);padding:6px 10px;border-radius:10px;font-weight:700;font-size:12px}
+    .phone-image{width:86%;height:420px;background:linear-gradient(135deg,var(--accent),transparent);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#03121a;font-weight:800;font-size:22px}
+
+    /* Features */
+    .features{display:flex;gap:18px;margin-top:28px}
+    .feature{flex:1;background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .feature h4{margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Products */
+    .products{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,0.02)}
+    .product-img{height:180px;border-radius:12px;background:linear-gradient(135deg,var(--accent-2),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800}
+    .product-title{margin:12px 0 6px;font-weight:700}
+    .product-sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+    .product-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+
+    /* Utilities */
+    .kicker{background:linear-gradient(90deg,var(--accent-2),var(--accent));padding:6px 10px;border-radius:999px;color:#02111a;font-weight:700;font-size:12px;display:inline-block}
+    .muted{color:var(--muted)}
+
+    /* CTA band */
+    .cta-band{margin-top:40px;background:linear-gradient(90deg,rgba(124,77,255,0.08),rgba(0,212,255,0.06));padding:20px;border-radius:12px;display:flex;justify-content:space-between;align-items:center}
+
+    /* Footer */
+    footer{margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .products{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{flex-direction:column;align-items:flex-start;gap:14px}
+      .products{grid-template-columns:1fr}
+    }
+
+    /* micro animations */
+    .btn:active{transform:translateY(1px)}
+    .card:hover{transform:translateY(-6px);transition:all .28s cubic-bezier(.2,.9,.3,1)}
+    .hero-card{transition:transform .36s ease}
+    .hero-card:hover{transform:translateY(-6px)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- simple phone icon -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="2" width="12" height="20" rx="3" fill="white" opacity="0.15"/><rect x="10" y="18.5" width="4" height="1" rx="0.5" fill="white" opacity="0.3"/></svg>
+        </div>
+        <div>
+          <h1>Teja Mobiles</h1>
+          <div style="font-size:12px;color:var(--muted)">Premium smartphones & accessories</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#products">Products</a>
+        <a href="#deals">Deals</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+        <button class="btn btn-pill btn-primary">Sign in</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span class="kicker">New — Launch 2025</span>
+            <div class="muted">Free shipping above ₹999</div>
+          </div>
+          <h2>Discover powerful phones, brilliant prices.</h2>
+          <p>Teja Mobiles brings curated premium smartphones, fast delivery, trusted warranty and buyback options. Shop now — handpicked for performance, camera and battery life.</p>
+
+          <div class="cta-row">
+            <button class="btn btn-primary btn-pill">Shop Bestsellers</button>
+            <button class="btn btn-ghost btn-pill">Explore Collections</button>
+            <button class="btn btn-outline btn-pill">Store Locator</button>
+          </div>
+
+          <div class="features" style="margin-top:18px">
+            <div class="feature">
+              <h4>30-day returns</h4>
+              <p class="muted">Hassle-free returns and refunds for all purchases.</p>
+            </div>
+            <div class="feature">
+              <h4>Certified Warranty</h4>
+              <p class="muted">Official warranty with door-step service partners.</p>
+            </div>
+            <div class="feature">
+              <h4>Easy EMI</h4>
+              <p class="muted">EMI available with 0% and low-interest plans.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <button class="btn btn-icon" title="Compare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9h12M6 15h8" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="btn btn-icon" title="Wishlist"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C1 10 4 6 7.5 6 9.3 6 12 7.6 12 7.6S14.7 6 16.5 6C20 6 23 10 21 13.5 19 16.65 12 21 12 21z" stroke="white" stroke-width="0.8" fill="rgba(255,255,255,0.03)"/></svg></button>
+            <span class="muted" style="font-size:13px">Or call us: <strong style="color:var(--accent)">+91 98765 43210</strong></span>
+          </div>
+        </div>
+
+        <aside class="phone-mock hero-card" aria-hidden="true">
+          <div class="badge">Trending</div>
+          <div class="phone-screen">
+            <div class="phone-image">Teja X1 Pro</div>
+          </div>
+          <div style="width:100%;display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:800">Teja X1 Pro</div>
+              <div class="muted" style="font-size:13px">6.7" • 120Hz • 108MP • 6000mAh</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:800;font-size:18px">₹39,999</div>
+              <div class="muted" style="font-size:12px">EMI from ₹3,333/mo</div>
+            </div>
+          </div>
+          <div style="width:100%;display:flex;gap:8px;margin-top:10px">
+            <button class="btn btn-primary" style="flex:1">Buy Now</button>
+            <button class="btn btn-ghost" style="flex:1">Quick View</button>
+          </div>
+        </aside>
+      </section>
+
+      <section id="products">
+        <h3 style="margin-top:18px">Featured products</h3>
+        <div class="products">
+          <!-- Product 1 -->
+          <div class="card">
+            <div class="product-img">X1 Pro</div>
+            <div class="product-title">Teja X1 Pro</div>
+            <div class="product-sub">Flagship camera • 12GB • 256GB</div>
+            <div class="product-row">
+              <div>
+                <div style="font-weight:800">₹39,999</div>
+                <div class="muted" style="font-size:12px">Limited stock</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-ghost">Compare</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="card">
+            <div class="product-img">Nova S</div>
+            <div class="product-title">Teja Nova S</div>
+            <div class="product-sub">Value performer • 8GB • 128GB</div>
+            <div class="product-row">
+              <div>
+                <div style="font-weight:800">₹18,999</div>
+                <div class="muted" style="font-size:12px">Best seller</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-ghost">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="card">
+            <div class="product-img">AirPods</div>
+            <div class="product-title">Teja Earbuds</div>
+            <div class="product-sub">Active noise cancellation</div>
+            <div class="product-row">
+              <div>
+                <div style="font-weight:800">₹3,499</div>
+                <div class="muted" style="font-size:12px">2-year warranty</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-ghost">Wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="margin-top:30px">
+        <div class="cta-band">
+          <div>
+            <div style="font-weight:800;font-size:18px">Limited time trade-in offers</div>
+            <div class="muted" style="font-size:13px">Upgrade your phone and get instant credit — up to ₹10,000</div>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn btn-outline">Check Trade-in</button>
+            <button class="btn btn-primary">Get Offer</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:28px;display:grid;grid-template-columns:1fr 320px;gap:20px">
+        <div class="hero-card">
+          <h3>Why choose Teja Mobiles?</h3>
+          <ul style="color:var(--muted);line-height:1.7">
+            <li>Expert quality checks on every device</li>
+            <li>Certified and safe payment gateway</li>
+            <li>Express delivery & easy returns</li>
+            <li>24/7 customer support</li>
+          </ul>
+          <div style="margin-top:14px;display:flex;gap:10px">
+            <button class="btn btn-primary">Start a Live Chat</button>
+            <button class="btn btn-ghost">Call Support</button>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h4 style="margin:0 0 8px">Get in touch</h4>
+          <form style="display:flex;flex-direction:column;gap:10px">
+            <input type="text" placeholder="Your name" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"/>
+            <input type="email" placeholder="Email" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"/>
+            <input type="tel" placeholder="Phone" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"/>
+            <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary" style="flex:1">Send Message</button>
+              <button class="btn btn-ghost" style="flex:1">Reset</button>
+            </div>
+          </form>
+        </aside>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        © 2025 Teja Mobiles — All rights reserved.
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="muted">Privacy</div>
+        <div class="muted">Terms</div>
+        <div class="muted">Sitemap</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // small interactive helpers
+    document.querySelectorAll('.btn-primary').forEach(b=>b.addEventListener('click',()=>{b.blur();}));
+    // Smooth anchor scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t) t.scrollIntoView({behavior:'smooth',block:'start'});});});
+  </script>
+</body>
+</html>
