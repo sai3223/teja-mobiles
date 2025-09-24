@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - Teja Mobiles</title>
+  <style>
+    body{font-family:Arial;background:#0b0f14;color:#e6eef6;padding:40px;text-align:center}
+    form{max-width:500px;margin:auto;background:#111a24;padding:20px;border-radius:10px;text-align:left}
+    input,button{width:100%;padding:10px;margin:10px 0;border-radius:6px;border:1px solid #333}
+    button{background:linear-gradient(90deg,#00d4ff,#7c4dff);color:#061018;font-weight:bold;cursor:pointer}
+    button:hover{opacity:0.9}
+    a{color:#00d4ff;text-decoration:none}
+  </style>
+</head>
+<body>
+  <h2>Checkout</h2>
+  <form onsubmit="event.preventDefault();location.href='thankyou.html'">
+    <label>Name</label>
+    <input type="text" required>
+    <label>Email</label>
+    <input type="email" required>
+    <label>Address</label>
+    <input type="text" required>
+    <label>Phone</label>
+    <input type="tel" required>
+    <button type="submit">Complete Purchase</button>
+  </form>
+  <p><a href="index.html">← Back to Products</a></p>
+</body>
+</html>
